@@ -75,9 +75,7 @@ const deleteSource = argv.delete;
     fileSort(source);
 
     if (deleteSource === "y") {
-        const deletedPath = del([`${source}`]);
-        deletedPath
-            .then(data => console.log(data))
-            .catch(error => console.log(error));
+        const deletedPath = await del([`${source}`]);
+        console.log(deletedPath);
     }
 })();
